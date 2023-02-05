@@ -32,6 +32,12 @@ url                      : ""
 baseurl                  : ""
 repository               : "slashhack/slashhack"
 
+search                   : true
+search_full_content      : true
+search_provider          : "lunr"
+lunr:
+  search_within_pages    : true
+
 category_archive:
   type: liquid
   path: /categories/
@@ -48,19 +54,18 @@ defaults:
       layout: single
       comments: # true
       related: true
+      toc: true
   - scope:
       path: ""
       type: categories
     values:
       layout: single
-      comments: # true
       related: true
   - scope:
       path: ""
       type: tags
     values:
       layout: single
-      comments: # true
       related: true
 
 include:
@@ -73,6 +78,7 @@ plugins:
   - jekyll-github-metadata
 
   - jekyll-archives
+  - jekyll-spaceship
 
 # Exclude from processing.
 # The following items will not be processed, by default.
